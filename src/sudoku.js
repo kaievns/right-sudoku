@@ -5,6 +5,9 @@
  */
 var Sudoku = new Class({
   initialize: function(element) {
-    this.container = $(element);
+    this.container = $E('div', {id: 'r-sudoku'}).insertTo($(element));
+    
+    this.field = new Sudoku.Field();
+    this.container.insert(this.field.element);
   }
 })

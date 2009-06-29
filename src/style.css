@@ -1,0 +1,46 @@
+div#game-container {
+  padding: 20pt;
+}
+
+div#rs-sudoku {
+  
+}
+
+div#rs-field {
+  width: 282px;
+  height: 282px;
+  border: 2px solid #DDD;
+  border-right: none;
+  border-bottom: none;
+  font-size: 18px;
+  font-family: Verdana;
+}
+
+div#rs-field div.rs-block {
+  float: left;
+  width: 93px;
+  height: 93px;
+  border: 1px solid #DDD;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+div#rs-field div.rs-block div.rs-cell {
+  float: left;
+  border: 1px solid #DDD;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: -1px;
+  margin-top: -1px;
+  cursor: pointer;
+}
+
+div#rs-field div.rs-block div.rs-cell:hover {
+  background: pink;
+}
+
+div.rs-cell-highlighted {
+  background: #FEF;
+}
