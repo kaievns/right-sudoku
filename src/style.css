@@ -9,9 +9,6 @@ div#rs-sudoku {
 div#rs-field {
   width: 282px;
   height: 282px;
-  border: 2px solid #DDD;
-  border-right: none;
-  border-bottom: none;
   font-size: 18px;
   font-family: Verdana;
 }
@@ -27,7 +24,7 @@ div#rs-field div.rs-block {
 
 div#rs-field div.rs-block div.rs-cell {
   float: left;
-  border: 1px solid #DDD;
+  border: 1px solid #CCC;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -40,7 +37,10 @@ div#rs-field div.rs-block div.rs-cell {
 div#rs-field div.rs-block div.rs-cell:hover {
   background: pink;
 }
-
+div.rs-cell-preset {
+  color: brown;
+  cursor: default !important;
+}
 div.rs-cell-highlighted {
   background: #FEF;
 }

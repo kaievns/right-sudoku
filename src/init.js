@@ -1,5 +1,6 @@
 [
   'sudoku',
+  'sudoku/boards',
   'sudoku/field',
   'sudoku/block',
   'sudoku/cell'

@@ -9,5 +9,7 @@ var Sudoku = new Class({
     
     this.field = new Sudoku.Field();
     this.container.insert(this.field.element);
+    
+    this.field.loadPuzzle(Sudoku.Boards.random().puzzle);
   }
 })

@@ -16,6 +16,6 @@ Sudoku.Cell = new Class(Observer, {
   },
   
   setNumber: function(num) {
-    this.element.update(''+num);
+    this.element.update(num == null ? '' : ''+num)[num == null ? 'removeClass' : 'addClass']('rs-cell-preset');
   }
 });
