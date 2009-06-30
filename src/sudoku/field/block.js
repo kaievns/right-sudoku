@@ -3,7 +3,7 @@
  *
  * @copyright Nikolay V. Nemshilov aka St. <nemshilov%gmail#com>
  */
-Sudoku.Block = new Class({
+Sudoku.Field.Block = new Class({
   initialize: function(x, y) {
     this.element = $E('div', {'class': 'rs-block'});
     
@@ -13,7 +13,7 @@ Sudoku.Block = new Class({
     this.cells = [];
     
     for (var i=0; i < 9; i++) {
-      var cell = new Sudoku.Cell(this, i % 3, (i / 3).floor());
+      var cell = new Sudoku.Field.Cell(this, i % 3, (i / 3).floor());
       this.cells.push(cell);
     }
   }
