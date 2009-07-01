@@ -1,7 +1,7 @@
 /**
  * Sudoku puzzles collection
  *
- * Generated with the http://www.jaapsch.net/sudoku.htm applet
+ * Generated with the gnome-sudoku software
  *
  * @copyright 2009 Nikolay V. Nemshilov aka St.
  */
