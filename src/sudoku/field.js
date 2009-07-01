@@ -49,9 +49,9 @@ Sudoku.Field = new Class(Observer, {
         
         this.rows[cell.y][cell.x] = this.cols[cell.x][cell.y] = cell;
         
-        cell.on('mouseover', this.highlightCross.bind(this, cell.x, cell.y));
+        cell.on('mouseover', this.highlightCross.bind(this, cell));
         cell.on('select', this.showInput.bind(this, cell));
-        cell.on('assign', this.checkFieldValues.bind(this, cell));
+        cell.on('assign', this.cellChanged.bind(this, cell));
       }
     }
     
@@ -59,12 +59,12 @@ Sudoku.Field = new Class(Observer, {
   },
 
   // highlights the row and colum at the given intersection
-  highlightCross: function(x, y) {
+  highlightCross: function(cell) {
     this.fadeAll();
     
     for (var i=0; i < 9; i++) {
-      this.rows[y][i].element.addClass('rs-cell-highlighted');
-      this.cols[x][i].element.addClass('rs-cell-highlighted');
+      this.rows[cell.y][i].element.addClass('rs-cell-highlighted');
+      this.cols[cell.x][i].element.addClass('rs-cell-highlighted');
     }
   },
   
@@ -75,6 +75,10 @@ Sudoku.Field = new Class(Observer, {
         this.rows[i][j].element.removeClass('rs-cell-highlighted');
       }
     }
+  },
+  
+  cellChanged: function(cell) {
+    this.checkFieldValues();
   },
   
   checkFieldValues: function() {

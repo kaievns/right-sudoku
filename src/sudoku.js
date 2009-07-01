@@ -8,8 +8,28 @@ var Sudoku = new Class({
     this.container = $E('div', {id: 'r-sudoku'}).insertTo($(element));
     
     this.field = new Sudoku.Field();
-    this.container.insert(this.field.element);
+    this.menu  = new Sudoku.Menu();
     
-    this.field.loadPuzzle(Sudoku.Boards.random().puzzle);
+    this.container.insert([
+      this.field.element,
+      this.menu.element,
+      
+      $E('div', {style: {clear: 'both'}})
+    ]);
+    
+    this.menu.on('level-changed', this.loadLevel.bind(this));
+    this.menu.on('reset', this.reset.bind(this));
+    
+    this.reset();
+  },
+  
+  reset: function() {
+    this.loadLevel(this.menu.currentLevel());
+  },
+  
+  loadLevel: function(level) {
+    var board = Sudoku.Boards.random(level);
+    
+    this.field.loadPuzzle(board.puzzle);
   }
 })

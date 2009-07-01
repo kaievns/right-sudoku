@@ -11,6 +11,9 @@ div#rs-field {
   height: 282px;
   font-size: 18px;
   font-family: Verdana;
+  float: left;
+  margin-right: 20pt;
+  margin-bottom: 20pt;
 }
 
 div#rs-field div.rs-block {
@@ -53,7 +56,6 @@ div.rs-input {
   width: 78px;
   height: 78px;
   position: absolute;
-  background: #FFE;
 }
 
 div.rs-input div {
@@ -63,9 +65,23 @@ div.rs-input div {
   line-height: 24px;
   text-align: center;
   font-size: 80%;
-  border: 1px solid #DDD;
+  border: 1px solid #AAA;
+  background: #FDD;
   cursor: pointer;
 }
 div.rs-input div:hover {
   background: pink;
+}
+
+
+div#rs-menu {
+  width: 100pt;
+  float: left;
+}
+div#rs-menu select {
+  width: 100pt;
+  margin-bottom: 10pt;
+}
+div#rs-menu input {
+  width: 50pt;
 }
