@@ -68,7 +68,8 @@ Sudoku.Boards = {
    * @return Array flipped puzzle
    */
   flip: function(puzzle) {
-    var flipper = [function(x, y) { return [x, y]; },
+    var flipper = [
+      function(x, y) { return [x, y]; },
       function(x, y) { return [y, x]; },
       function(x, y) { return [8-x, y]; },
       function(x, y) { return [x, 8-y]; },

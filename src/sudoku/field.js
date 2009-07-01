@@ -125,7 +125,7 @@ Sudoku.Field = new Class(Observer, {
   checkCellValue: function(cell) {
     var row = this.rows[cell.y];
     var col = this.cols[cell.x];
-    var box = '012345678'.split('').map('toInt').map(function(i) {
+    var box = [0,1,2,3,4,5,6,7,8].map(function(i) {
       var x = (cell.x/3).floor() * 3 + i % 3;
       var y = (cell.y/3).floor() * 3 + (i/3).floor();
       
