@@ -6,6 +6,17 @@ Right Sudoku is the sudoku game implemented with the RightJS JavaScript library.
 Basically just a show off case, but nicely done
 
 
+Building
+========
+
+To create a single file build, the project uses the FrontCompiler tool, a ruby
+based javascript compressor tool. To create your own builds you need to run
+the following commands
+
+  git submodule init && git submodule update
+  rake build
+
+
 ---
 Copyright (C) 2009 Nikolay V. Nemshilov aka St.
 

@@ -40,4 +40,4 @@ Sudoku.Field.Input = new Class(Observer, {
       this.currentCell.setNumber(number);
     }
   }
-})
+});
