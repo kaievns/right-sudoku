@@ -48,7 +48,7 @@ var Sudoku = new Class({
   },
   
   finished: function() {
-    this.status.resetTimer();
+    this.status.stopTimer();
     this.field.showFinishAnimation();
     this.highscore.add(this.status.getTime());
   }

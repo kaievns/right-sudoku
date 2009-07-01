@@ -70,24 +70,27 @@ Sudoku.Field = new Class(Observer, {
       }
     }
     
-    this.element.on('mouseout', this.fadeAll.bind(this));
+    this.element.on('mouseout', this.fadeCross.bind(this));
   },
 
   // highlights the row and colum at the given intersection
   highlightCross: function(cell) {
-    this.fadeAll();
+    this.fadeCross();
     
     for (var i=0; i < 9; i++) {
       this.rows[cell.y][i].element.addClass('rs-cell-highlighted');
       this.cols[cell.x][i].element.addClass('rs-cell-highlighted');
     }
+    
+    this.prevCell = cell;
   },
   
   // fades all the highlights
-  fadeAll: function() {
-    for (var i=0; i < 9; i++) {
-      for (var j=0; j < 9; j++) {
-        this.rows[i][j].element.removeClass('rs-cell-highlighted');
+  fadeCross: function() {
+    if (this.prevCell) {
+      for (var i=0; i < 9; i++) {
+        this.rows[this.prevCell.y][i].element.removeClass('rs-cell-highlighted');
+        this.cols[this.prevCell.x][i].element.removeClass('rs-cell-highlighted');
       }
     }
   },
