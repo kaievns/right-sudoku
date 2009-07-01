@@ -28,6 +28,10 @@ Sudoku.Field.Cell = new Class(Observer, {
     return this;
   },
   
+  reset: function() {
+    return this.setNumber(null);
+  },
+  
   isPreset: function() {
     return this.element.hasClass('rs-cell-preset');
   }

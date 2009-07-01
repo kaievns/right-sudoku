@@ -5,6 +5,7 @@
   'sudoku/field/block',
   'sudoku/field/cell',
   'sudoku/field/input',
+  'sudoku/field/history',
   'sudoku/menu',
   'sudoku/status'
 ].each(function(name) {

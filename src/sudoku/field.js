@@ -11,6 +11,8 @@ Sudoku.Field = new Class(Observer, {
     
     this.input = new Sudoku.Field.Input();
     this.element.insert(this.input.element);
+    
+    this.history = new Sudoku.Field.History();
   },
   
   loadPuzzle: function(puzzle) {
@@ -25,6 +27,13 @@ Sudoku.Field = new Class(Observer, {
   showInput: function(cell) {
     if (!cell.isPreset())
       this.input.showAt(cell);
+    
+    return this;
+  },
+  
+  undo: function() {
+    this.history.undo();
+    return this;
   },
   
 // pritected
@@ -78,6 +87,9 @@ Sudoku.Field = new Class(Observer, {
   },
   
   cellChanged: function(cell) {
+    if (cell.number)
+      this.history.push(cell);
+      
     this.checkFieldValues();
   },
   
@@ -91,6 +103,7 @@ Sudoku.Field = new Class(Observer, {
           fine = fine & this.checkCellValue(cell);
         } else {
           fully_filled = false;
+          cell.element.removeClass('rs-cell-wrong');
         }
       }
     }

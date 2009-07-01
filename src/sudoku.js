@@ -24,6 +24,7 @@ var Sudoku = new Class({
     
     this.menu.on('level-changed', this.loadLevel.bind(this));
     this.menu.on('reset', this.reset.bind(this));
+    this.menu.on('undo', this.field.undo.bind(this.field));
     
     this.reset();
   },
