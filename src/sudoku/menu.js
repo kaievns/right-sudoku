@@ -13,8 +13,8 @@ Sudoku.Menu = new Class(Observer, {
     // the levels options
     this.levels = $E('select', {id: 'rs-levels'}).insertTo(this.element).update(
       this.LEVELS.map(function(label) {
-        return '<option value="'+label.toLowerCase()+'">Level: '+label+'</option>';
-      }).join('')).setValue(this.DEFAULT
+        return $E('option', {value: label.toLowerCase(), html: "Level: "+label});
+      })).setValue(this.DEFAULT
       
       ).on('change', (function() {
         this.fire('level-changed', this.levels.value);

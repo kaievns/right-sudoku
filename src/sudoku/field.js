@@ -7,12 +7,12 @@ Sudoku.Field = new Class(Observer, {
   initialize: function() {
     this.element = $E('div', {id: 'rs-field'});
     
-    this.initCells();
-    
     this.input = new Sudoku.Field.Input();
     this.element.insert(this.input.element);
     
     this.history = new Sudoku.Field.History();
+    
+    this.initCells();
   },
   
   loadPuzzle: function(puzzle) {

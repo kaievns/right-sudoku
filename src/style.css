@@ -24,6 +24,9 @@ div#rs-field {
   float: left;
   margin-right: 20pt;
   margin-bottom: 20pt;
+  border: 1px solid #DDD;
+  border-bottom: none;
+  border-right: none;
 }
 
 div#rs-field div.rs-block {
@@ -67,6 +70,7 @@ div.rs-input {
   width: 96px;
   height: 96px;
   position: absolute;
+  z-index: 1;
 }
 div.rs-input div {
   float: left;
@@ -77,9 +81,23 @@ div.rs-input div {
   border: 1px solid #AAA;
   background: #FDD;
   cursor: pointer;
+  
 }
 div.rs-input div:hover {
   background: pink;
+}
+div.rs-input div.rs-input-shadow {
+  position: absolute;
+  background: black;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  width: 100%;
+  height: 100%;
+  margin-left: 3px;
+  margin-top: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  z-index: -1;
 }
 
 

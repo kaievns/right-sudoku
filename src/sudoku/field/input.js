@@ -7,6 +7,8 @@
 Sudoku.Field.Input = new Class(Observer, {
   initialize: function() {
     this.element = $E('div', {'class': 'rs-input', 'style': {display: 'none'}});
+    this.element.insert($E('div', {'class': 'rs-input-shadow'}));
+    
     for (var i=1; i < 10; i++) {
       $E('div', {html: ''+i}).insertTo(this.element).on('click', this.select.bind(this, i));
     }
@@ -16,11 +18,11 @@ Sudoku.Field.Input = new Class(Observer, {
   
   showAt: function(cell) {
     this.element.show('fade', {duration: 'short'});
-    var cell_size = cell.element.offsetWidth;
+    var cell_position = cell.element.position();
     
     this.element.setStyle({
-      marginLeft: (cell.x * cell_size - this.element.offsetWidth/3) + 'px',
-      marginTop: (cell.y * cell_size - this.element.offsetHeight/3) + 'px'
+      left: (cell_position.x - this.element.offsetWidth/3 + 4) + 'px',
+      top: (cell_position.y - this.element.offsetHeight/3 + 4) + 'px'
     });
     
     this.currentCell = cell;

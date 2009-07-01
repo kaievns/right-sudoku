@@ -3,9 +3,17 @@
  *
  * @copyright Nikolay V. Nemshilov aka St.
  */
-Sudoku.Field.History = new Class(Array, {
+Sudoku.Field.History = new Class({
+  initialize: function() {
+    this.stack = [];
+  },
+  
+  push: function(cell) {
+    this.stack.push(cell);
+  },
+  
   undo: function() {
-    var cell = this.pop();
+    var cell = this.stack.pop();
     
     if (cell) {
       cell.reset();
