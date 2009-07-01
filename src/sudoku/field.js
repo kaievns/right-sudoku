@@ -36,6 +36,12 @@ Sudoku.Field = new Class(Observer, {
     return this;
   },
   
+  showFinishAnimation: function() {
+    this.element.highlight('pink').highlight('pink').highlight('pink');
+    
+    return this;
+  },
+  
 // pritected
   
   // builds the cells structure

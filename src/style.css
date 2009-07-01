@@ -7,8 +7,13 @@ div#rs-game {
   font-size: 10pt;
 }
 
+div#rs-game label {
+  font-weight: bold;
+  color: grey;
+}
+
 div#rs-sidebar {
-  width: 100pt;
+  width: 120pt;
   float: left;
 }
 
@@ -84,11 +89,11 @@ div#rs-menu {
 }
 
 div#rs-menu select {
-  width: 100pt;
+  width: 120pt;
   margin-bottom: 10pt;
 }
 div#rs-menu input {
-  width: 50pt;
+  width: 59pt;
 }
 
 
@@ -97,10 +102,28 @@ div#rs-status {
   margin-bottom: 20pt;
 }
 div#rs-status label {
-  font-weight: bold;
-  color: grey;
+  display: block;
+  float: left;
+  width: 70pt;
 }
 div#rs-status div span {
-  float: right;
-  margin-top: -1.3em;
+  
+}
+
+
+div#rs-highscore {
+  
+}
+div#rs-highscore ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 5pt;
+}
+div#rs-highscore ul li {
+  margin: 0;
+  padding: 0;
+}
+div#rs-highscore ul li input {
+  width: 70pt;
 }

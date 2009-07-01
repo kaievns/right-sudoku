@@ -31,6 +31,10 @@ Sudoku.Status = new Class({
     this.timer.stop();
   },
   
+  getTime: function() {
+    return this.seconds || 0;
+  },
+  
 // protected
   
   updateTimer: function() {
