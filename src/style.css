@@ -2,15 +2,20 @@ div#game-container {
   padding: 20pt;
 }
 
-div#rs-sudoku {
-  
+div#rs-game {
+  font-family: Verdana;
+  font-size: 10pt;
+}
+
+div#rs-sidebar {
+  width: 100pt;
+  float: left;
 }
 
 div#rs-field {
   width: 282px;
   height: 282px;
   font-size: 18px;
-  font-family: Verdana;
   float: left;
   margin-right: 20pt;
   margin-bottom: 20pt;
@@ -75,13 +80,27 @@ div.rs-input div:hover {
 
 
 div#rs-menu {
-  width: 100pt;
-  float: left;
+  margin-bottom: 20pt;
 }
+
 div#rs-menu select {
   width: 100pt;
   margin-bottom: 10pt;
 }
 div#rs-menu input {
   width: 50pt;
+}
+
+
+
+div#rs-status {
+  margin-bottom: 20pt;
+}
+div#rs-status label {
+  font-weight: bold;
+  color: grey;
+}
+div#rs-status div span {
+  float: right;
+  margin-top: -1.3em;
 }

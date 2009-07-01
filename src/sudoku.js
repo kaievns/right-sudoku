@@ -5,14 +5,19 @@
  */
 var Sudoku = new Class({
   initialize: function(element) {
-    this.container = $E('div', {id: 'r-sudoku'}).insertTo($(element));
+    this.container = $E('div', {id: 'rs-game'}).insertTo($(element));
     
-    this.field = new Sudoku.Field();
-    this.menu  = new Sudoku.Menu();
+    this.field  = new Sudoku.Field();
+    this.menu   = new Sudoku.Menu();
+    this.status = new Sudoku.Status();
     
     this.container.insert([
       this.field.element,
-      this.menu.element,
+      
+      $E('div', {id: 'rs-sidebar'}).insert([
+        this.menu.element,
+        this.status.element
+      ]),
       
       $E('div', {style: {clear: 'both'}})
     ]);
@@ -25,10 +30,13 @@ var Sudoku = new Class({
   
   reset: function() {
     this.loadLevel(this.menu.currentLevel());
+    this.status.resetTimer();
   },
   
   loadLevel: function(level) {
     var board = Sudoku.Boards.random(level);
+    
+    this.status.setDifficulty(board.difficulty);
     
     this.field.loadPuzzle(board.puzzle);
   }
