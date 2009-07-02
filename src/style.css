@@ -51,7 +51,7 @@ div#rs-field div.rs-block div.rs-cell {
 }
 
 div#rs-field div.rs-block div.rs-cell:hover {
-  background: pink;
+  background: pink !important;
 }
 div.rs-cell-preset {
   color: brown;

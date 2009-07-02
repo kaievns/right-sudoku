@@ -78,8 +78,7 @@ Sudoku.Field = new Class(Observer, {
     this.fadeCross();
     
     for (var i=0; i < 9; i++) {
-      this.rows[cell.y][i].element.addClass('rs-cell-highlighted');
-      this.cols[cell.x][i].element.addClass('rs-cell-highlighted');
+      this.rows[cell.y][i].element.style.background = this.cols[cell.x][i].element.style.background = '#FEF';
     }
     
     this.prevCell = cell;
@@ -89,8 +88,7 @@ Sudoku.Field = new Class(Observer, {
   fadeCross: function() {
     if (this.prevCell) {
       for (var i=0; i < 9; i++) {
-        this.rows[this.prevCell.y][i].element.removeClass('rs-cell-highlighted');
-        this.cols[this.prevCell.x][i].element.removeClass('rs-cell-highlighted');
+        this.rows[this.prevCell.y][i].element.style.background = this.cols[this.prevCell.x][i].element.style.background = 'transparent';
       }
     }
   },
