@@ -14,10 +14,11 @@ Sudoku.Menu = new Class(Observer, {
     this.levels = $E('select', {id: 'rs-levels'}).insertTo(this.element).update(
       this.LEVELS.map(function(label) {
         return $E('option', {value: label.toLowerCase(), html: "Level: "+label});
-      })).setValue(this.DEFAULT
+      })).setValue(Cookie.get('rs-level') || this.DEFAULT
       
       ).on('change', (function() {
         this.fire('level-changed', this.levels.value);
+        Cookie.set('rs-level', this.levels.value);
       }).bind(this));
     
     // the reset button
