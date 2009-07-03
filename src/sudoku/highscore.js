@@ -28,7 +28,7 @@ Sudoku.Highscore = new Class({
   
   add: function(time) {
     this.results.push({time: time, name: '<input type="text" />'});
-    this.results.sort(function(a,b) { return a.time > b.time; });
+    this.results.sort(function(a,b) { return a.time > b.time ? 1 : a.time < b.time ? -1 : 0; });
     this.results.splice(this.LENGTH, this.results.length);
     
     return this.render();
