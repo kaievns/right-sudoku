@@ -62,7 +62,7 @@ div.rs-cell-highlighted {
 }
 
 div.rs-cell-wrong {
-  background: #D44;
+  background: #D44 !important;
 }
 
 
